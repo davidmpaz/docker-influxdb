@@ -1,0 +1,16 @@
+apiVersion: 1
+
+datasources:
+  - name: InfluxDB_v2_Flux
+    type: influxdb
+    access: proxy
+    url: http://influxdb:8086
+    secureJsonData:
+      token: HdKjSKhsG3qHVwlJfGk4LhFqJqrYIJwjHrLZ5G5mStgA1H2m1WlpNseOBVsMLi-qVqkQgXFjL8ythfKxl_1aUA==
+    jsonData:
+      version: Flux
+      organization: LBBW
+      defaultBucket: lbbw_jmeter
+      tlsSkipVerify: true
+    isDefault: true
+    editable: true
