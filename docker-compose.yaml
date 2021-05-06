@@ -1,29 +1,45 @@
 version: "3"
 services:
-    influxdb:
-        image: influxdb:1.5
-        volumes:
-            - influxdb_data:/var/lib/influxdb
-        ports:
-            - 127.0.0.1:8086:8086
-        restart: always
-    chronograf:
-        image: chronograf:1.5
-        volumes:
-            - chronograf_data:/var/lib/chronograf
-        ports:
-            - 127.0.0.1:8087:8888
-        restart: always
-    grafana:
-        image: grafana/grafana
-        ports:
-            - 127.0.0.1:3000:3000
-        volumes:
-            - grafana_data:/var/lib/grafana
-        restart: always
-
+  influxdb:
+    image: influxdb:2.0
+    volumes:
+      - influxdb_data:/var/lib/influxdb
+    ports:
+      - 127.0.0.1:8086:8086
+    restart: always
+  chronograf:
+    image: chronograf:2.0
+    volumes:
+      - chronograf_data:/var/lib/chronograf
+    ports:
+      - 127.0.0.1:8087:8888
+    restart: always
+  grafana:
+    image: grafana/grafana
+    ports:
+      - 127.0.0.1:3000:3000
+    volumes:
+      - grafana_data:/var/lib/grafana
+    restart: always
+  master:
+    image: pedrocesarti/jmeter-docker:3.3
+    command: master
+    tty: true
+    ports:
+      - "60000"
+    volumes:
+      - "./test/:/jmeter/sample/"
+  server:
+    image: pedrocesarti/jmeter-docker:3.3
+    command: server
+    tty: true
+    ports:
+      - "50000"
+      - "1099"
+    depends_on:
+      - master
 
 volumes:
-    influxdb_data:
-    chronograf_data:
-    grafana_data:
+  influxdb_data:
+  chronograf_data:
+  grafana_data:
