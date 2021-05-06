@@ -27,6 +27,8 @@ services:
     image: pedrocesarti/jmeter-docker:5.4
     command: master
     tty: true
+    environment:
+      JMETER_SERVER_ADDITIONAL_ARGS: "-Jserver.rmi.ssl.disable=true"
     ports:
       - "60000"
     volumes:
@@ -35,6 +37,8 @@ services:
     image: pedrocesarti/jmeter-docker:5.4
     command: server
     tty: true
+    environment:
+      JMETER_SERVER_ADDITIONAL_ARGS: "-Jserver.rmi.ssl.disable=true"
     ports:
       - "50000"
       - "1099"
