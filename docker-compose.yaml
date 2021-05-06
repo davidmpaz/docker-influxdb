@@ -22,7 +22,9 @@ services:
       - grafana_data:/var/lib/grafana
     restart: always
   master:
-    image: pedrocesarti/jmeter-docker:3.3
+    # see: https://github.com/rogeriofonseca/distributed-jmeter-docker
+    # to build with new version of the JMeter binaries
+    image: pedrocesarti/jmeter-docker:5.4
     command: master
     tty: true
     ports:
@@ -30,7 +32,7 @@ services:
     volumes:
       - "./test/:/jmeter/sample/"
   server:
-    image: pedrocesarti/jmeter-docker:3.3
+    image: pedrocesarti/jmeter-docker:5.4
     command: server
     tty: true
     ports:
