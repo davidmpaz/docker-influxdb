@@ -19,17 +19,20 @@ services:
       DOCKER_INFLUXDB_INIT_RETENTION: "${INFLUXDB_RETENTION}"
       DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: "${INFLUXDB_ADMIN_TOKEN}"
     restart: always
-#  grafana:
-#    image: grafana/grafana
-#    ports:
-#      - 127.0.0.1:3000:3000
-#    volumes:
-#      - grafana_data:/var/lib/grafana
-#      - ./grafana/provisioning/:/etc/grafana/provisioning
-#    environment:
-#      GF_SECURITY_ADMIN_USER: "${GRAFANA_USERNAME}"
-#      GF_SECURITY_ADMIN_PASSWORD: "${GRAFANA_PASSWORD}"
-#    restart: always
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - 127.0.0.1:3000:3000
+    networks:
+      - jmeter_network
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning/:/etc/grafana/provisioning
+    environment:
+      GF_SECURITY_ADMIN_USER: "${GRAFANA_USERNAME}"
+      GF_SECURITY_ADMIN_PASSWORD: "${GRAFANA_PASSWORD}"
+    restart: always
 
 volumes:
   influxdb_data:
