@@ -26,5 +26,4 @@ datasources:
       httpMode: GET
       httpHeaderName1: 'Authorization'
       tlsSkipVerify: true
-    isDefault: true
     editable: true
