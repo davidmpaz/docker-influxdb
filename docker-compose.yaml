@@ -2,11 +2,14 @@ version: "3"
 services:
   influxdb:
     image: influxdb:2.0
+    container_name: influxdb
     volumes:
       - influxdb_data:/var/lib/influxdb
       - ./influxdb:/docker-entrypoint-initdb.d
     ports:
       - 127.0.0.1:8086:8086
+    networks:
+      - jmeter_network
     environment:
       DOCKER_INFLUXDB_INIT_MODE: setup
       DOCKER_INFLUXDB_INIT_USERNAME: "${INFLUXDB_USERNAME}"
@@ -27,30 +30,10 @@ services:
 #      GF_SECURITY_ADMIN_USER: "${GRAFANA_USERNAME}"
 #      GF_SECURITY_ADMIN_PASSWORD: "${GRAFANA_PASSWORD}"
 #    restart: always
-#  master:
-#    # see: https://github.com/rogeriofonseca/distributed-jmeter-docker
-#    # to build with new version of the JMeter binaries
-#    image: pedrocesarti/jmeter-docker:5.4
-#    command: master
-#    tty: true
-#    environment:
-#      JMETER_SERVER_ADDITIONAL_ARGS: "-Jserver.rmi.ssl.disable=true"
-#    ports:
-#      - "60000"
-#    volumes:
-#      - "./test/:/jmeter/sample/"
-#  server:
-#    image: pedrocesarti/jmeter-docker:5.4
-#    command: server
-#    tty: true
-#    environment:
-#      JMETER_SERVER_ADDITIONAL_ARGS: "-Jserver.rmi.ssl.disable=true"
-#    ports:
-#      - "50000"
-#      - "1099"
-#    depends_on:
-#      - master
 
 volumes:
   influxdb_data:
   grafana_data:
+
+networks:
+  jmeter_network:
