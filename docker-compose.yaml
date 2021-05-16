@@ -1,11 +1,12 @@
 version: "3"
 services:
   influxdb:
-    image: influxdb:2.0
-    container_name: influxdb
+    image: influxdb:1.8
+    container_name: influxdb_v1
     volumes:
       - influxdb_data:/var/lib/influxdb
-      - ./influxdb:/docker-entrypoint-initdb.d
+      - ./influxdb/init:/docker-entrypoint-initdb.d
+      - ./influxdb/influxdb.conf:/etc/influxdb/influxdb.conf:ro
     ports:
       - 127.0.0.1:8086:8086
     networks:
@@ -21,7 +22,7 @@ services:
     restart: always
   grafana:
     image: grafana/grafana
-    container_name: grafana
+    container_name: grafana_v1
     ports:
       - 127.0.0.1:3000:3000
     networks:

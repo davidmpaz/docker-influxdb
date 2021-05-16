@@ -203,27 +203,12 @@ Connect to 5s</stringProp>
           <collectionProp name="Arguments.arguments">
             <elementProp name="testName" elementType="Argument">
               <stringProp name="Argument.name">testName</stringProp>
-              <stringProp name="Argument.value">Typicode</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="nodeName" elementType="Argument">
-              <stringProp name="Argument.name">nodeName</stringProp>
-              <stringProp name="Argument.value">Test-Node</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="runId" elementType="Argument">
-              <stringProp name="Argument.name">runId</stringProp>
-              <stringProp name="Argument.value">R001</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="influxDBHttpScheme" elementType="Argument">
-              <stringProp name="Argument.name">influxDBHttpScheme</stringProp>
-              <stringProp name="Argument.value">http</stringProp>
+              <stringProp name="Argument.value">LBBW Last Test</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="influxDBHost" elementType="Argument">
               <stringProp name="Argument.name">influxDBHost</stringProp>
-              <stringProp name="Argument.value">influxdb</stringProp>
+              <stringProp name="Argument.value">localhost</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="influxDBPort" elementType="Argument">
@@ -231,19 +216,24 @@ Connect to 5s</stringProp>
               <stringProp name="Argument.value">8086</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
-            <elementProp name="influxDBToken" elementType="Argument">
-              <stringProp name="Argument.name">influxDBToken</stringProp>
-              <stringProp name="Argument.value">HdKjSKhsG3qHVwlJfGk4LhFqJqrYIJwjHrLZ5G5mStgA1H2m1WlpNseOBVsMLi-qVqkQgXFjL8ythfKxl_1aUA==</stringProp>
+            <elementProp name="influxDBUser" elementType="Argument">
+              <stringProp name="Argument.name">influxDBUser</stringProp>
+              <stringProp name="Argument.value">admin</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
-            <elementProp name="influxDBOrganization" elementType="Argument">
-              <stringProp name="Argument.name">influxDBOrganization</stringProp>
-              <stringProp name="Argument.value">LBBW</stringProp>
+            <elementProp name="influxDBPassword" elementType="Argument">
+              <stringProp name="Argument.name">influxDBPassword</stringProp>
+              <stringProp name="Argument.value">admin123</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
-            <elementProp name="influxDBBucket" elementType="Argument">
-              <stringProp name="Argument.name">influxDBBucket</stringProp>
+            <elementProp name="influxDBDatabase" elementType="Argument">
+              <stringProp name="Argument.name">influxDBDatabase</stringProp>
               <stringProp name="Argument.value">lbbw_jmeter</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="retentionPolicy" elementType="Argument">
+              <stringProp name="Argument.name">retentionPolicy</stringProp>
+              <stringProp name="Argument.value">autogen</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="samplersList" elementType="Argument">
@@ -256,19 +246,14 @@ Connect to 5s</stringProp>
               <stringProp name="Argument.value">true</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
-            <elementProp name="recordSubSamples" elementType="Argument">
-              <stringProp name="Argument.name">recordSubSamples</stringProp>
-              <stringProp name="Argument.value">true</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="saveResponseBodyOfFailures" elementType="Argument">
-              <stringProp name="Argument.name">saveResponseBodyOfFailures</stringProp>
-              <stringProp name="Argument.value">true</stringProp>
+            <elementProp name="nodeName" elementType="Argument">
+              <stringProp name="Argument.name">nodeName</stringProp>
+              <stringProp name="Argument.value">Test-Node</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
           </collectionProp>
         </elementProp>
-        <stringProp name="classname">org.md.jmeter.influxdb2.visualizer.InfluxDatabaseBackendListenerClient</stringProp>
+        <stringProp name="classname">rocks.nt.apm.jmeter.JMeterInfluxDBBackendListenerClient</stringProp>
       </BackendListener>
       <hashTree/>
     </hashTree>

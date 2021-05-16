@@ -1,29 +1,15 @@
 apiVersion: 1
 
 datasources:
-  - name: DS_INFLUXDB_v2_Flux
+  - name: InfluxDB_v1
     type: influxdb
     access: proxy
-    url: http://influxdb:8086
-    secureJsonData:
-      token: HdKjSKhsG3qHVwlJfGk4LhFqJqrYIJwjHrLZ5G5mStgA1H2m1WlpNseOBVsMLi-qVqkQgXFjL8ythfKxl_1aUA==
-    jsonData:
-      version: Flux
-      organization: LBBW
-      defaultBucket: lbbw_jmeter
-      tlsSkipVerify: true
     isDefault: true
-    editable: true
-  - name: DS_INFLUXDB_v2_InfluxQL
-    type: influxdb
-    access: proxy
-    url: http://influxdb:8086
-    # This database should be mapped to a bucket
     database: lbbw_jmeter
-    secureJsonData:
-      httpHeaderValue1: 'Token HdKjSKhsG3qHVwlJfGk4LhFqJqrYIJwjHrLZ5G5mStgA1H2m1WlpNseOBVsMLi-qVqkQgXFjL8ythfKxl_1aUA=='
-    jsonData:
-      httpMode: GET
-      httpHeaderName1: 'Authorization'
-      tlsSkipVerify: true
+    user: admin
+    password: admin123
+    url: http://influxdb_v1:8086
     editable: true
+    jsonData:
+      tlsSkipVerify: true
+      httpMode: GET
