@@ -19,7 +19,7 @@ datasources:
     access: proxy
     url: http://influxdb:8086
     # This database should be mapped to a bucket
-    database: site
+    database: lbbw_jmeter
     secureJsonData:
       httpHeaderValue1: 'Token HdKjSKhsG3qHVwlJfGk4LhFqJqrYIJwjHrLZ5G5mStgA1H2m1WlpNseOBVsMLi-qVqkQgXFjL8ythfKxl_1aUA=='
     jsonData:

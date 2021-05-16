@@ -38,7 +38,7 @@
       }
     ]
   },
-  "description": "This dashboard shows live load test metrics provided by JMeter, updated bars charts. UPDATED",
+  "description": "This dashboard shows live load test metrics provided by JMeter.",
   "editable": true,
   "gnetId": 13644,
   "graphTooltip": 1,
@@ -5652,7 +5652,7 @@
     ]
   },
   "timezone": "browser",
-  "title": "JMeter Load Test (org.md.jmeter.influxdb2.visualizer) - influxdb v2.0 (Flux) Migrated",
+  "title": "JMeter Load Test (org.md.jmeter.influxdb2.visualizer) Migrated",
   "uid": "b4kP_KoMzasUPDATED",
   "version": 1
 }
